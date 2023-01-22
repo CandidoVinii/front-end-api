@@ -7,9 +7,9 @@ function App() {
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
-      var socket = socketIOClient('https://362c-2804-2484-84fb-6b00-c924-b48e-90ae-c01.sa.ngrok.io', { transports: ['websocket', 'polling', 'flashsocket'] });
+      var socket = socketIOClient('https://back-end-chat.onrender.com/', { transports: ['websocket', 'polling', 'flashsocket'] });
       setSocket(socket);
-      
+
 
         socket.on('new message', (msg) => {
             setMessages((prev) => [...prev, msg]);
